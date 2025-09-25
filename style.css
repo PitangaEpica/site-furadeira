@@ -1,0 +1,166 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+header{
+    height: 15vh;
+    width: 100vw;
+    background-color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30vw;
+}
+header div{
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
+    width: 300px;
+    background-color: rgb(214, 213, 213);
+    border-radius: 100px;
+    gap: 1vw;
+    box-shadow: 4px 4px rgb(78, 78, 78);
+}
+#logo{
+    font-size: 100px;
+}
+
+header button{
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 5px;
+    background-color:azure;
+    box-shadow: 2px 2px grey;
+}
+
+header button:active{
+    background-color: grey;
+    box-shadow: none;
+    transform: translate(2px, 2px);
+}
+
+
+section{
+    width: 100vw;
+    height: 85vh;
+}
+.drill{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.drill img{
+    height: 500px;
+}
+.control-pad{
+    display: flex;
+    justify-content: space-between;
+    background-color: grey;
+    box-shadow: 0 10px 2px rgb(59, 59, 59) inset;
+    border: 5px solid rgb(59, 59, 59);
+    border-radius: 10px;
+}
+.energia{
+    height: 500px;
+    width: 15vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.energia img{
+    height: 300px;
+    width: 200px;
+}
+.energia button{
+    border: none;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 5px 5px rgb(53, 63, 71);
+}
+.energia button:active{
+    background-color: whitesmoke;
+    box-shadow: 2px 2px rgb(52,62,71);
+    transform: translate(3px,3px);
+}
+.ligar{
+    height: 500px;
+    width: 15vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.ligar img{
+    height: 300px;
+    width: 200px;
+}
+.ligar button{
+    border: none;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 5px 5px rgb(53, 63, 71);
+}
+.ligar button:active{
+    background-color: whitesmoke;
+    box-shadow: 2px 2px rgb(52,62,71);
+    transform: translate(3px,3px);
+}
+.encher{
+    height: 500px;
+    width: 15vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.encher img{
+    height: 250px;
+    width: 200px;
+}
+.encher button{
+    border: none;
+    border-radius: 20px;
+    background-color: white;
+    height: 340px;
+    box-shadow: 5px 5px rgb(53, 63, 71);
+}
+.encher button:active{
+    background-color: whitesmoke;
+    box-shadow: 2px 2px rgb(52,62,71);
+    transform: translate(3px,3px);
+}
+.esfriar{
+    height: 500px;
+    width: 15vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.esfriar img{
+    height: 250px;
+    width: 200px;
+}
+.esfriar button{
+    border: none;
+    border-radius: 20px;
+    background-color: white;
+    height: 340px;
+    box-shadow: 5px 5px rgb(53, 63, 71);
+}
+.esfriar button:active{
+    background-color: whitesmoke;
+    box-shadow: 2px 2px rgb(52,62,71);
+    transform: translate(3px,3px);
+}
+
+
