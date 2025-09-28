@@ -1,3 +1,5 @@
+import { addMachine, deleteMachine, updateValues} from "./crud.js";
+
 const btnEnergia = document.getElementById("btn-energia");
 const btnLiga = document.getElementById("btn-ligar");
 const btnEncher = document.getElementById("btn-encher");
@@ -29,10 +31,17 @@ let isPinShowing = false
 let isPowered = false;
 let isOn = false;
 let temp = 25;
-let cool = 5
+let cool = 5;
+let activeTime = 0;
+let consumption = 0;
 let tempTime = 1000;
 let ftempcoolTimeout;
 let reduceCoolantLevelTimeout;
+let pinValue;
+(async ()=>{
+    pinValue = await addMachine()
+})();
+let updateAllTimeout;
 
 //BOTÕES//
 btnEnergia.addEventListener('click', () => {
@@ -86,12 +95,12 @@ togglePin.addEventListener('click', () => {
     if (!isPinShowing) {
         isPinShowing = true
         togglePin.textContent = "-"
-        pin.textContent = "asdffaffsads"
+        pin.textContent = pinValue
     }
     else {
         isPinShowing = false
         togglePin.textContent = "👁"
-        pin.textContent = "*****************"
+        pin.textContent = "**************************"
     }
 })
 
@@ -112,6 +121,8 @@ function ftempcool() {
         if (temp < 50) temp = temp + 1;
         else if (temp > 50) temp = temp - 1
         tempTime = 1000
+        activeTime = activeTime + tempTime/1000
+        consumption = 700 * activeTime
     }
     else if (temp > 25 && cool > 0) {
         temp = temp - 1;
@@ -123,6 +134,8 @@ function ftempcool() {
     else if (cool <= 0 && isPowered && isOn) {
         temp = temp + 1;
         tempTime = 200
+        activeTime = activeTime + tempTime/100
+        consumption = 700 * activeTime
     }
     else if (cool <= 0) {
         if (!isPowered || !isOn) {
@@ -149,9 +162,18 @@ function reduceCoolantLevel() {
 }
 reduceCoolantLevel()
 
+async function updateAll() {
+    clearTimeout(updateAllTimeout)
+    updateValues(pinValue, isPowered, isOn, cool, temp, activeTime, consumption)
+    updateAllTimeout = setTimeout(updateAll, 1000);
+}
+updateAll()
+
 window.addEventListener('unload', () => {
-    console.log("A página foi fechada ou recarregada!");
-    // Aqui você pode salvar dados, limpar storage, etc.
+    deleteMachine(pinValue)
+});
+window.addEventListener('reload', () => {
+    deleteMachine(pinValue)
 });
 
 

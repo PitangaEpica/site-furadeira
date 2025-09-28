@@ -33,7 +33,9 @@ header {
     align-items: center;
     justify-content: center;
 }
-
+.pin{
+    font-size: 10px;
+}
 .logos {
     display: flex;
     align-items: center;
