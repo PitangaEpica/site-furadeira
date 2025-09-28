@@ -149,6 +149,12 @@ function reduceCoolantLevel() {
 }
 reduceCoolantLevel()
 
+window.addEventListener('unload', () => {
+    console.log("A página foi fechada ou recarregada!");
+    // Aqui você pode salvar dados, limpar storage, etc.
+});
+
+
 
 
 

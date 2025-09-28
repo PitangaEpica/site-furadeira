@@ -15,9 +15,11 @@
       <img src="./img/magnus.png" alt="">
       <h1 id="logo">Simmuck</h1>
     </div>
-    <div class="code">
-      <button id="toggleConnection">👁</button>
-      <h1 id="pin">*****************</h1>
+    <div class="codeBox">
+      <div class="code">
+        <button id="toggleConnection">👁</button>
+        <h1 id="pin">*****************</h1>
+      </div>
     </div>
   </header>
   <section>
@@ -25,42 +27,58 @@
       <div class="info">
         <div class="info-box">
           <div>
-          <p>-------------------------------------</p>
-          <div class="dsp-energia"><p>Energia:</p><p id="Adsp-energia">🔴</p></div>
-          <p>-------------------------------------</p>
-          <div class="dsp-liga"><p>Furadeira ligada:</p><p id="Adsp-liga">🔴</p></div>
-          <p>-------------------------------------</p>
-          <div class="dsp-cool"><p>Reservatório de óleo:</p><p id="Adsp-cool">5.00L</p></div>
-          <p>-------------------------------------</p>
-          <div class="dsp-temp"><p>Temperatura:</p><p id="Adsp-temp">25°C</p></div>
-          <p>-------------------------------------</p>
-        </div>
+            <p>-------------------------------------</p>
+            <div class="dsp-energia">
+              <p>Energia:</p>
+              <p id="Adsp-energia">🔴</p>
+            </div>
+            <p>-------------------------------------</p>
+            <div class="dsp-liga">
+              <p>Furadeira ligada:</p>
+              <p id="Adsp-liga">🔴</p>
+            </div>
+            <p>-------------------------------------</p>
+            <div class="dsp-cool">
+              <p>Reservatório de óleo:</p>
+              <p id="Adsp-cool">5.00L</p>
+            </div>
+            <p>-------------------------------------</p>
+            <div class="dsp-temp">
+              <p>Temperatura:</p>
+              <p id="Adsp-temp">25°C</p>
+            </div>
+            <p>-------------------------------------</p>
+          </div>
         </div>
       </div>
       <div class="drill">
-        <img src="./img/drill/off.png" alt="" id="drill"/>
+        <img src="./img/drill/off.png" alt="" id="drill" />
       </div>
     </div>
 
     <div class="control-pad">
-      <div class="energia">
-        <button id="btn-energia"> <br>Ativar energia <br>
-          <img src="./img/switch/offSwitch.png" alt="" id="img-energia" />
-        </button>
+      <div class="btn-divisor">
+        <div class="energia">
+          <button id="btn-energia"> <br>Ativar energia <br>
+            <img src="./img/switch/offSwitch.png" alt="" id="img-energia" />
+          </button>
+        </div>
+        <div class="ligar">
+          <button id="btn-ligar"> <br>Ligar furadeira<br>
+            <img src="./img/switch/offSwitch.png" alt="" id="img-ligar" />
+          </button>
+        </div>
       </div>
-      <div class="ligar">
-        <button id="btn-ligar"> <br>Ligar furadeira<br>
-          <img src="./img/switch/offSwitch.png" alt="" id="img-ligar" />
-        </button>
-      </div>
-      <div class="encher">
-        <button id="btn-encher"><br>Encher reservatório<br> <br> <br>
-          <img src="./img/agua.png" alt="" id="img-encher"></button>
-      </div>
-      <div class="esfriar">
-        <button id="btn-esfriar">Esfriar broca <br>
-          <img src="./img/frio.png" alt="" id="img-esfriar">
-        </button>
+      <div class="btn-divisor">
+        <div class="encher">
+          <button id="btn-encher"><br>Encher reservatório<br> <br> <br>
+            <img src="./img/agua.png" alt="" id="img-encher"></button>
+        </div>
+        <div class="esfriar">
+          <button id="btn-esfriar">Esfriar broca <br>
+            <img src="./img/frio.png" alt="" id="img-esfriar">
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -68,5 +86,6 @@
     <p>Magnus Gallus Inc. 2025©</p>
   </footer>
 </body>
+
 </html>
 <script type="module" src="./main.js"></script>

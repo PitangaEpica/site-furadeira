@@ -1,10 +1,11 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
-header{
+
+header {
     height: 15vh;
     width: 100vw;
     background-color: grey;
@@ -13,7 +14,8 @@ header{
     justify-content: space-around;
     gap: 30vw;
 }
-.code{
+
+.code {
     display: flex;
     justify-content: center;
     height: 50px;
@@ -23,20 +25,31 @@ header{
     border-radius: 100px;
     gap: 1vw;
     box-shadow: 4px 4px rgb(78, 78, 78);
+    border: 1px solid black;
 }
-.logos{
+
+.codeBox {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.logos img{
+
+.logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+}
+
+.logos img {
     height: 100px;
 }
-#logo{
+
+#logo {
     font-size: 100px;
 }
 
-header button{
+header button {
     height: 2rem;
     width: 2rem;
     display: flex;
@@ -44,18 +57,19 @@ header button{
     justify-content: center;
     border: none;
     border-radius: 5px;
-    background-color:azure;
+    background-color: azure;
     box-shadow: 2px 2px grey;
+    border: 1px solid black;
 }
 
-header button:active{
+header button:active {
     background-color: grey;
     box-shadow: none;
     transform: translate(2px, 2px);
 }
 
 
-section{
+section {
     max-width: 100vw;
     background-image: url(./img/factory-bg.png);
     background-repeat: no-repeat;
@@ -63,20 +77,24 @@ section{
     background-size: cover;
 
 }
-.display{
+
+.display {
     display: flex;
 
 }
-.drill{
+
+.drill {
     width: 50vw;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.drill img{
+
+.drill img {
     height: 500px;
 }
-.info{
+
+.info {
     width: 50vw;
     height: 500px;
     display: flex;
@@ -84,44 +102,51 @@ section{
     justify-content: center;
     font-size: 30px;
 }
-.info-box{
+
+.info-box {
     background-color: rgb(171, 171, 171);
     border-radius: 20px;
     height: 350px;
     width: 450px;
+    min-width: 420px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 5px 5px rgb(150,150,150);
+    box-shadow: 5px 5px rgb(150, 150, 150);
 }
-.dsp-energia{
+
+.dsp-energia {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 380px;
 }
-.dsp-liga{
+
+.dsp-liga {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 380px;
 
 }
-.dsp-temp{
+
+.dsp-temp {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 380px;
 
 }
-.dsp-cool{
+
+.dsp-cool {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 380px;
 
 }
-.control-pad{
+
+.control-pad {
     display: flex;
     justify-content: space-between;
     background-image: url(./img/metal-floot.jpg);
@@ -129,7 +154,14 @@ section{
     border: 5px solid rgb(59, 59, 59);
     border-radius: 10px;
 }
-.energia{
+
+.btn-divisor {
+    display: flex;
+    justify-content: space-around;
+    width: 50vw;
+}
+
+.energia {
     height: 500px;
     width: 15vw;
     display: flex;
@@ -137,22 +169,27 @@ section{
     justify-content: center;
     align-items: center;
 }
-.energia img{
+
+.energia img {
     height: 300px;
     width: 200px;
 }
-.energia button{
+
+.energia button {
     border: none;
+    border: 2px solid black;
     border-radius: 20px;
     background-image: url(./img/plastic-texture.png);
-    box-shadow: 5px 5px rgb(0, 0, 0);
+    box-shadow: 5px 5px rgb(35, 43, 52);
 }
-.energia button:active{
+
+.energia button:active {
     background-color: whitesmoke;
     box-shadow: 2px 2px rgb(0, 0, 0);
-    transform: translate(3px,3px);
+    transform: translate(3px, 3px);
 }
-.ligar{
+
+.ligar {
     height: 500px;
     width: 15vw;
     display: flex;
@@ -160,22 +197,27 @@ section{
     justify-content: center;
     align-items: center;
 }
-.ligar img{
+
+.ligar img {
     height: 300px;
     width: 200px;
 }
-.ligar button{
+
+.ligar button {
     border: none;
     border-radius: 20px;
+    border: 2px solid black;
     background-image: url(./img/plastic-texture.png);
-    box-shadow: 5px 5px rgb(0, 0, 0);
+    box-shadow: 5px 5px rgb(35, 43, 52);
 }
-.ligar button:active{
+
+.ligar button:active {
     background-color: whitesmoke;
     box-shadow: 2px 2px rgb(0, 0, 0);
-    transform: translate(3px,3px);
+    transform: translate(3px, 3px);
 }
-.encher{
+
+.encher {
     height: 500px;
     width: 15vw;
     display: flex;
@@ -183,23 +225,28 @@ section{
     justify-content: center;
     align-items: center;
 }
-.encher img{
+
+.encher img {
     height: 250px;
     width: 200px;
 }
-.encher button{
+
+.encher button {
     border: none;
     border-radius: 20px;
+    border: 2px solid black;
     background-color: white;
     height: 340px;
-    box-shadow: 5px 5px rgb(0, 0, 0);
+    box-shadow: 5px 5px rgb(35, 43, 52);
 }
-.encher button:active{
+
+.encher button:active {
     background-color: whitesmoke;
     box-shadow: 2px 2px rgb(0, 0, 0);
-    transform: translate(3px,3px);
+    transform: translate(3px, 3px);
 }
-.esfriar{
+
+.esfriar {
     height: 500px;
     width: 15vw;
     display: flex;
@@ -207,21 +254,126 @@ section{
     justify-content: center;
     align-items: center;
 }
-.esfriar img{
+
+.esfriar img {
     height: 250px;
     width: 200px;
 }
-.esfriar button{
+
+.esfriar button {
     border: none;
     border-radius: 20px;
+    border: 2px solid black;
     background-color: white;
     height: 340px;
-    box-shadow: 5px 5px rgb(0, 0, 0);
+    box-shadow: 5px 5px rgb(35, 43, 52);
+
 }
-.esfriar button:active{
+
+.esfriar button:active {
     background-color: whitesmoke;
     box-shadow: 2px 2px rgb(0, 0, 0);
-    transform: translate(3px,3px);
+    transform: translate(3px, 3px);
 }
 
+@media (max-width:1300px) {
+    .logos img {
+        height: 50px;
+    }
 
+    #logo {
+        font-size: 50px;
+    }
+}
+
+@media (max-width:800px) {
+    .logos img {
+        height: 25px;
+    }
+
+    #logo {
+        font-size: 25px;
+    }
+
+    header {
+        display: block;
+    }
+
+
+}
+
+@media(max-width:920px) {
+    .display {
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+    header{
+        gap: 15vw;
+    }
+
+    .control-pad {
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+    }
+    .btn-divisor{
+        gap: 25vw;
+    }
+    .encher{
+        height: 320px;
+        align-items: center;
+    }
+    .esfriar{
+        height: 320px;
+        align-items: center;
+    }
+}
+
+@media (max-width:500px) {
+    .info-box p {
+        font-size: 23px;
+    }
+
+    .info-box {
+        min-width: 300px;
+        min-height: 200px;
+        height: 270px;
+    }
+
+    .info {
+        width: 300px;
+    }
+
+    .dsp-energia {
+        width: 280px;
+    }
+
+    .dsp-liga {
+        width: 280px;
+    }
+
+    .dsp-cool {
+        width: 280px;
+    }
+    .dsp-temp {
+        width: 280px;
+    }
+
+    .ligar{
+        height: 320px;
+    }
+    .energia{
+        height: 320px;
+    }
+    .btn-divisor{
+        flex-direction:column ;
+        align-items: center;
+        gap: 30px;
+    }
+    .control-pad{
+        gap: 30px;
+        height: 1450px;
+    }
+}
