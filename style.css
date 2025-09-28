@@ -13,7 +13,7 @@ header{
     justify-content: space-around;
     gap: 30vw;
 }
-header div{
+.code{
     display: flex;
     justify-content: center;
     height: 50px;
@@ -23,6 +23,14 @@ header div{
     border-radius: 100px;
     gap: 1vw;
     box-shadow: 4px 4px rgb(78, 78, 78);
+}
+.logos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logos img{
+    height: 100px;
 }
 #logo{
     font-size: 100px;
@@ -48,11 +56,19 @@ header button:active{
 
 
 section{
-    width: 100vw;
-    height: 85vh;
+    max-width: 100vw;
+    background-image: url(./img/factory-bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+.display{
+    display: flex;
+
 }
 .drill{
-    width: 100vw;
+    width: 50vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -60,10 +76,55 @@ section{
 .drill img{
     height: 500px;
 }
+.info{
+    width: 50vw;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+.info-box{
+    background-color: rgb(171, 171, 171);
+    border-radius: 20px;
+    height: 350px;
+    width: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px rgb(150,150,150);
+}
+.dsp-energia{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 380px;
+}
+.dsp-liga{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 380px;
+
+}
+.dsp-temp{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 380px;
+
+}
+.dsp-cool{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 380px;
+
+}
 .control-pad{
     display: flex;
     justify-content: space-between;
-    background-color: grey;
+    background-image: url(./img/metal-floot.jpg);
     box-shadow: 0 10px 2px rgb(59, 59, 59) inset;
     border: 5px solid rgb(59, 59, 59);
     border-radius: 10px;
@@ -83,12 +144,12 @@ section{
 .energia button{
     border: none;
     border-radius: 20px;
-    background-color: white;
-    box-shadow: 5px 5px rgb(53, 63, 71);
+    background-image: url(./img/plastic-texture.png);
+    box-shadow: 5px 5px rgb(0, 0, 0);
 }
 .energia button:active{
     background-color: whitesmoke;
-    box-shadow: 2px 2px rgb(52,62,71);
+    box-shadow: 2px 2px rgb(0, 0, 0);
     transform: translate(3px,3px);
 }
 .ligar{
@@ -106,12 +167,12 @@ section{
 .ligar button{
     border: none;
     border-radius: 20px;
-    background-color: white;
-    box-shadow: 5px 5px rgb(53, 63, 71);
+    background-image: url(./img/plastic-texture.png);
+    box-shadow: 5px 5px rgb(0, 0, 0);
 }
 .ligar button:active{
     background-color: whitesmoke;
-    box-shadow: 2px 2px rgb(52,62,71);
+    box-shadow: 2px 2px rgb(0, 0, 0);
     transform: translate(3px,3px);
 }
 .encher{
@@ -131,11 +192,11 @@ section{
     border-radius: 20px;
     background-color: white;
     height: 340px;
-    box-shadow: 5px 5px rgb(53, 63, 71);
+    box-shadow: 5px 5px rgb(0, 0, 0);
 }
 .encher button:active{
     background-color: whitesmoke;
-    box-shadow: 2px 2px rgb(52,62,71);
+    box-shadow: 2px 2px rgb(0, 0, 0);
     transform: translate(3px,3px);
 }
 .esfriar{
@@ -155,11 +216,11 @@ section{
     border-radius: 20px;
     background-color: white;
     height: 340px;
-    box-shadow: 5px 5px rgb(53, 63, 71);
+    box-shadow: 5px 5px rgb(0, 0, 0);
 }
 .esfriar button:active{
     background-color: whitesmoke;
-    box-shadow: 2px 2px rgb(52,62,71);
+    box-shadow: 2px 2px rgb(0, 0, 0);
     transform: translate(3px,3px);
 }
 

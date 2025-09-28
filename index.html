@@ -1,45 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simmuck</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="./img/favicon.ico" type="image/ico">
-  </head>
-  <body>
-    <header>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simmuck</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="./img/favicon.ico" type="image/ico">
+</head>
+
+<body>
+  <header>
+    <div class="logos">
+      <img src="./img/magnus.png" alt="">
       <h1 id="logo">Simmuck</h1>
-      <div>
+    </div>
+    <div class="code">
       <button id="toggleConnection">👁</button>
-      <h1>*****************</h1>
+      <h1 id="pin">*****************</h1>
+    </div>
+  </header>
+  <section>
+    <div class="display">
+      <div class="info">
+        <div class="info-box">
+          <div>
+          <p>-------------------------------------</p>
+          <div class="dsp-energia"><p>Energia:</p><p id="Adsp-energia">🔴</p></div>
+          <p>-------------------------------------</p>
+          <div class="dsp-liga"><p>Furadeira ligada:</p><p id="Adsp-liga">🔴</p></div>
+          <p>-------------------------------------</p>
+          <div class="dsp-cool"><p>Reservatório de óleo:</p><p id="Adsp-cool">5.00L</p></div>
+          <p>-------------------------------------</p>
+          <div class="dsp-temp"><p>Temperatura:</p><p id="Adsp-temp">25°C</p></div>
+          <p>-------------------------------------</p>
+        </div>
+        </div>
       </div>
-    </header>
-    <section>
       <div class="drill">
-        <img src="./img/off.jpg" alt="" />
+        <img src="./img/drill/off.png" alt="" id="drill"/>
       </div>
-      <div class="control-pad">
-        <div class="energia">
-          <button class="btn-energia"> <br>Ativar energia <br>
-          <img src="./img/switch/offSwitch.png" alt="" class="act-Energizar"/>
+    </div>
+
+    <div class="control-pad">
+      <div class="energia">
+        <button id="btn-energia"> <br>Ativar energia <br>
+          <img src="./img/switch/offSwitch.png" alt="" id="img-energia" />
         </button>
-        </div>
-        <div class="ligar">
-          <button class="btn-ligar"> <br>Ligar furadeira<br>
-          <img src="./img/switch/offSwitch.png" alt="" class="act-Ligar"/>
-        </button>
-        </div>
-        <div class="encher">
-            <button class="btn-encher"><br>Encher reservatório<br> <br> <br>
-            <img src="./img/agua.png" alt="" class="act-encher"></button>
-        </div>
-        <div class="esfriar">
-            <button class="btn-esfriar">Esfriar broca <br>
-                <img src="./img/frio.png" alt="">
-            </button>
-        </div>
       </div>
-    </section>
-  </body>
+      <div class="ligar">
+        <button id="btn-ligar"> <br>Ligar furadeira<br>
+          <img src="./img/switch/offSwitch.png" alt="" id="img-ligar" />
+        </button>
+      </div>
+      <div class="encher">
+        <button id="btn-encher"><br>Encher reservatório<br> <br> <br>
+          <img src="./img/agua.png" alt="" id="img-encher"></button>
+      </div>
+      <div class="esfriar">
+        <button id="btn-esfriar">Esfriar broca <br>
+          <img src="./img/frio.png" alt="" id="img-esfriar">
+        </button>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>Magnus Gallus Inc. 2025©</p>
+  </footer>
+</body>
 </html>
+<script type="module" src="./main.js"></script>
