@@ -134,7 +134,7 @@ function ftempcool() {
     else if (cool <= 0 && isPowered && isOn) {
         temp = temp + 1;
         tempTime = 200
-        activeTime = activeTime + tempTime/100
+        activeTime = activeTime + tempTime/1000
         consumption = 700 * activeTime
     }
     else if (cool <= 0) {
