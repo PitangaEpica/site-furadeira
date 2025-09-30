@@ -164,7 +164,7 @@ reduceCoolantLevel()
 
 async function updateAll() {
     clearTimeout(updateAllTimeout)
-    updateValues(pinValue, isPowered, isOn, cool.toFixed(2), temp, activeTime, consumption)
+    updateValues(pinValue, isPowered, isOn, Number(cool.toFixed(2)), temp, activeTime, consumption)
     updateAllTimeout = setTimeout(updateAll, 1000);
 }
 updateAll()
