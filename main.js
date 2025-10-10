@@ -169,6 +169,9 @@ function ftempcool() {
     if(durability<0){
         durability = 0
     }
+    if(durability<100){
+        document.querySelector(".nobit").style.display = "block"
+    }
     if(durability==0){
         document.querySelector(".nobit").style.display = "block"
         isPowered = false
