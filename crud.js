@@ -22,8 +22,8 @@ export async function addMachine() {
     }
 
 }
-export async function updateValues(pin, isPowered, isOn, cool, temp, activeTime, consumption) {
-    await set(child(machineRef, pin), { isPowered, isOn, cool, temp, activeTime, consumption })
+export async function updateValues(pin, isPowered, isOn, cool, temp, activeTime, consumption, durability) {
+    await set(child(machineRef, pin), { isPowered, isOn, cool, temp, activeTime, consumption, durability })
 }
 export async function deleteMachine(id) {
     const delRef = child(machineRef, id);

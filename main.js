@@ -35,6 +35,8 @@ let cool = 5;
 let activeTime = 0;
 let consumption = 0;
 let tempTime = 1000;
+let durability = 1000;
+let maxtemp = 300
 let ftempcoolTimeout;
 let reduceCoolantLevelTimeout;
 let pinValue;
@@ -45,7 +47,7 @@ let updateAllTimeout;
 
 //BOTÕES//
 btnEnergia.addEventListener('click', () => {
-    if (isPowered == false) {
+    if (isPowered == false && temp<maxtemp) {
         isPowered = true;
         imgEnergia.src = "./img/switch/onSwitch.png"
         AdspEnergia.textContent = "🟢"
@@ -64,7 +66,7 @@ btnEnergia.addEventListener('click', () => {
 
 btnLiga.addEventListener('click', () => {
     {
-        if (isOn == false) {
+        if (isOn == false && temp<maxtemp) {
             isOn = true;
             imgLigar.src = "./img/switch/onSwitch.png"
             if (isPowered) {
@@ -82,13 +84,15 @@ btnLiga.addEventListener('click', () => {
     }
 })
 btnEncher.addEventListener('click', () => {
+    if(temp<maxtemp){
     cool = 5;
-    AdspCool.textContent = "5.00L"
+    AdspCool.textContent = "5.00L"}
 })
 
 btnEsfriar.addEventListener('click', () => {
+    if(temp<maxtemp){
     temp = 25
-    AdspTemp.textContent = "25°C"
+    AdspTemp.textContent = "25°C"}
 })
 
 togglePin.addEventListener('click', () => {
@@ -107,7 +111,7 @@ togglePin.addEventListener('click', () => {
 //DRILL//
 setInterval(fdrill, 16);
 function fdrill() {
-    if (isPowered && isOn) {
+    if (isPowered && isOn && temp<maxtemp) {
         drill.src = "./img/drill/on.png"
     }
     else {
@@ -117,32 +121,64 @@ function fdrill() {
 //TEMP//
 function ftempcool() {
     clearTimeout(ftempcoolTimeout)
-    if (isPowered && isOn && temp >= 25 && cool > 0) {
+    if (isPowered && isOn && temp >= 25 && cool > 0 && temp<maxtemp) {
         if (temp < 50) temp = temp + 1;
         else if (temp > 50) temp = temp - 1
         tempTime = 1000
         activeTime = activeTime + tempTime/1000
         consumption = 700 * activeTime
+        durability = durability-1
     }
-    else if (temp > 25 && cool > 0) {
+    else if (temp > 25 && cool > 0 && temp<maxtemp) {
         temp = temp - 1;
         tempTime = 2000
     }
     else if (temp < 25) {
         temp = 25;
     }
-    else if (cool <= 0 && isPowered && isOn) {
+    else if (cool <= 0 && isPowered && isOn && temp<maxtemp) {
         temp = temp + 1;
         tempTime = 200
         activeTime = activeTime + tempTime/1000
         consumption = 700 * activeTime
+        durability = durability-1
     }
-    else if (cool <= 0) {
+    else if (cool <= 0 && temp<maxtemp) {
         if (!isPowered || !isOn) {
             temp = temp - 1;
             tempTime = 2000
         }
     }
+    if(temp>maxtemp){
+        temp = maxtemp
+    }
+    else if(temp===maxtemp){
+        document.querySelector(".broken").style.display = "block"
+        isPowered = false
+        isOn = false
+        imgLigar.src = "./img/switch/offSwitch.png"
+        imgEnergia.src = "./img/switch/offSwitch.png"
+        AdspLigado.textContent = "🔴"
+        AdspEnergia.textContent = "🔴"
+
+    }
+    else{
+        document.querySelector(".broken").style.display = "none"
+    }
+
+    if(durability<0){
+        durability = 0
+    }
+    if(durability==0){
+        document.querySelector(".nobit").style.display = "block"
+        isPowered = false
+        isOn = false
+        imgLigar.src = "./img/switch/offSwitch.png"
+        imgEnergia.src = "./img/switch/offSwitch.png"
+        AdspLigado.textContent = "🔴"
+        AdspEnergia.textContent = "🔴"
+    }
+
     AdspCool.textContent = cool.toFixed(2) + "L";
     AdspTemp.textContent = temp + "°C";
     ftempcoolTimeout = setTimeout(ftempcool, tempTime)
@@ -152,7 +188,7 @@ ftempcool()
 function reduceCoolantLevel() {
     clearTimeout(reduceCoolantLevelTimeout)
     if (isPowered && isOn && temp >= 25 && cool > 0) {
-        if (cool > 0) cool = cool - 0.01
+        if (cool > 0) cool = cool - 0.1       
         AdspCool.textContent = cool.toFixed(2) + "L";
     }
     if (cool < 0) {
@@ -164,7 +200,7 @@ reduceCoolantLevel()
 
 async function updateAll() {
     clearTimeout(updateAllTimeout)
-    updateValues(pinValue, isPowered, isOn, Number(cool.toFixed(2)), temp, activeTime, consumption)
+    updateValues(pinValue, isPowered, isOn, Number(cool.toFixed(2)), temp, Number(activeTime.toFixed(2)), Number(consumption.toFixed(2)), Number(durability.toFixed(2)))
     updateAllTimeout = setTimeout(updateAll, 1000);
 }
 updateAll()
@@ -175,6 +211,24 @@ window.addEventListener('unload', () => {
 window.addEventListener('reload', () => {
     deleteMachine(pinValue)
 });
+
+document.querySelector(".broken").addEventListener('click',()=>{
+    temp = 25;
+    isOn = false
+    isPowered = false
+    btnEnergia.src = "./img/switch/offSwitch.png"
+    btnLiga.src = "./img/switch/offSwitch.png"
+    cool = 5;
+    activeTime = 0
+    consumption = 0
+    durability = 1000
+})
+
+document.querySelector(".nobit").addEventListener('click',()=>{
+    durability = 1000
+    document.querySelector(".nobit").style.display = "none"
+})
+
 
 
 

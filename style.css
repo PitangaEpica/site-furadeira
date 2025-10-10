@@ -97,6 +97,29 @@ section {
     height: 500px;
 }
 
+.broken{
+    background: none;
+    border: none;
+    position: absolute;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    display: none;
+}
+
+.nobit{
+    background: none;
+    border: none;
+    position: absolute;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    display: none;
+}
+
+.nobit img{
+    height: 350px;
+}
+
+
 .info {
     width: 50vw;
     height: 500px;
