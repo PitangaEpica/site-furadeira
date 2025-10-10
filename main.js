@@ -188,7 +188,7 @@ ftempcool()
 function reduceCoolantLevel() {
     clearTimeout(reduceCoolantLevelTimeout)
     if (isPowered && isOn && temp >= 25 && cool > 0) {
-        if (cool > 0) cool = cool - 0.1       
+        if (cool > 0) cool = cool - 0.01       
         AdspCool.textContent = cool.toFixed(2) + "L";
     }
     if (cool < 0) {
